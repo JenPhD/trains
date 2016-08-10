@@ -20,22 +20,25 @@ var config = {
 $("#submitTrain").on("click", function(){
 
 	//Getting new train input
-	var trainName = $("#addName").val().trim();
-	var trainDest = $("#addDestination").val().trim();
-	var trainTime = $("#addTime").val().trim();
-	var trainFreq = $("#addFreq").val().trim();
+	trainName = $('#addName').val().trim();
+	trainDest = $('#addDestination').val().trim();
+	trainTime = $('#addTime').val().trim();
+	trainFreq = $('#addFreq').val().trim();
 
 	//Creating temporary object for holding train data
 
 	var newTrain = {
 		name: trainName,
 		destination: trainDest,
-		time: trainTime
+		time: trainTime,
 		frequency: trainFreq
 	}
 
 	//Uploads train data to the database
-	database.ref().push(newTrain);
+	database.ref().push({
+		newTrain,
+		dateAdded: firebase.database.ServerValue.TIMESTAMP
+	})
 
 	//Logs everything to the console
 	console.log(newTrain.name);
@@ -43,18 +46,29 @@ $("#submitTrain").on("click", function(){
 	console.log(newTrain.time);
 	console.log(newTrain.frequency);
 
+	// Clears all of the text-boxes
+	$("#addName").val("");
+	$("#addDestination").val("");
+	$("#addTime").val("");
+	$("#addFreq").val("");
+
 	//Prevents moving to new page
 	return false;
 
 });
+//Create Firebase event for adding trains to the database and a row in the html with entries
+database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
-//Firebase watcher + initial loader HINT: .on("value")
-database.ref().on("value", function(snapshot) {
+	console.log(childSnapshot.val());
 
-	// Log everything that's coming out of snapshot
-	console.log(snapshot.val());
-	console.log(snapshot.val().name);
-	console.log(snapshot.val().destination);
-	console.log(snapshot.val().time);
-	console.log(snapshot.val().frequency);
+	// Store everything into a variable.
+	var trainName = childSnapshot.val().name;
+	var trainDest = childSnapshot.val().destination;
+	var trainTime = childSnapshot.val().time;
+	var trainFreq = childSnapshot.val().frequency;
+
+	//Make sure the time is in the right format
+
+
+
 });

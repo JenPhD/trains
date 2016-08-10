@@ -13,8 +13,6 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-	
-
 	<!-- Site specific overrides -->
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
@@ -43,7 +41,7 @@
 						<div class="col-lg-2" id="frequency">Frequency (min)</div>
 						<div class="col-lg-2" id="next">Next Arrival</div>
 						<div class="col-lg-2" id="away">Minutes Away</div>
-						</div>					
+					</div>					
 				</div>
 			</div>
 		</div>
@@ -67,12 +65,20 @@
 							<input type="text" class="form-control" id="addDestination">
 						</div>	
 						<div class="form-group">
-							<label for="firstTime">First Train Time (HH:mm-military time)</label>
-							<input type="text" class="form-control" id="addTime">
+						<label for=trTime>First Train Time (HH:mm-military time)</label>
+							<div class = "row">	
+								<div class="form-group col-xs-6">					
+									<label for="firstHour"></label>
+									<input type="number" class="form-control" id="addHours" placeholder="military hour" min="0" max="23">
+								</div>
+								<div class="form-group col-xs-6">
+									<label for="firstMinutes"></label>
+									<input type="number" class="form-control" id="addMinutes" placeholder="minutes" min="1" max="59">
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="freqMin">Frequency (min)</label>
-							<input type="number" class="form-control" id="addFreq">
+							<input type="number" min="1" max="24" class="form-control" id="addFreq">
 						</div>
 						<button id="submitTrain" type="submit" class="btn btn-primary">Submit</button>
 					</form>
@@ -88,13 +94,13 @@
 
 	
   <!-- jQuery 2.2.4 -->
-  <script src="assets/javascript/jquery-2.2.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!--firebase-->
   <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
   <!--moment.js-->
-  <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"</script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
   <!-- Local javascript operations file -->
   <script src="assets/javascript/app.js"></script>
 
