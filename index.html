@@ -73,20 +73,16 @@
 						<div class="form-group">
 							<label for=trTime>First Train Time (HH:mm-military time)</label>
 							<div class = "row">	
-								<div class="form-group col-xs-2">					
-									<label for="firstHour"></label>
-									<input type="number" class="form-control" id="addHours" placeholder="military hour(0-23)" min="0" max="23">
-								</div>
-								<div class="form-group col-xs-2">
-									<label for="firstMinutes"></label>
-									<input type="number" class="form-control" id="addMinutes" placeholder="minutes(0-59)" min="1" max="59">
+								<div class="form-group col-xs-4">					
+									<label for="trtime"></label>
+									<input type="time" class="form-control" step="60" id="addTime" id="addTime">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-xs-2">
 								<label for="freqMin">Frequency (min)</label>
-								<input type="number" min="1" max="1380" class="form-control" id="addFreq">
+								<input type="number" min="1" max="1440" class="form-control" id="addFreq">
 							</div>
 							<div class="form-group col-xs-2">
 								<button id="submitTrain" type="submit" class="btn btn-primary">Submit</button>

@@ -8,16 +8,25 @@
 }
 
 #nameRow {
-	margin-left: 10px;
+	margin-left: 2px;
 }
 
 #destRow {
-	margin-left: 10px;
+	margin-left: 2px;
 }
 
 #freqRow {
-	margin-left: 10px;
+	margin-left: 2px;
 }
+
+#nextRow {
+	margin-left: 2px;
+}
+
+#awayRow {
+	margin-left: 2px;
+}
+
 .footer {
 	background-color: blue;
 	color: white;
