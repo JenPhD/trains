@@ -13,7 +13,8 @@ var config = {
 	//Initial values
 	var trainName = "";
 	var trainDest = "";
-	var trainTime = "";
+	var trainHours = "";
+	var trainMinutes = "";
 	var trainFreq = 0;
 
 //Button for adding trains
@@ -22,7 +23,8 @@ $("#submitTrain").on("click", function(){
 	//Getting new train input
 	trainName = $('#addName').val().trim();
 	trainDest = $('#addDestination').val().trim();
-	trainTime = $('#addTime').val().trim();
+	trainHours = $('#addHours').val().trim();
+	trainMinutes = $('#addMinutes').val().trim();
 	trainFreq = $('#addFreq').val().trim();
 
 	//Creating temporary object for holding train data
@@ -30,7 +32,8 @@ $("#submitTrain").on("click", function(){
 	var newTrain = {
 		name: trainName,
 		destination: trainDest,
-		time: trainTime,
+		hours: trainHours,
+		minutes: trainMinutes,
 		frequency: trainFreq
 	}
 
@@ -41,15 +44,25 @@ $("#submitTrain").on("click", function(){
 	})
 
 	//Logs everything to the console
-	console.log(newTrain.name);
-	console.log(newTrain.destination);
-	console.log(newTrain.time);
-	console.log(newTrain.frequency);
+	// console.log(newTrain.name);
+	// console.log(newTrain.destination);
+	// console.log(newTrain.hours);
+	// console.log(newTrain.minutes);
+	// console.log(newTrain.frequency);
+
+	//Add trains to the schedule
+	$('#name').append('<div class="row" id="nameRow">');
+	$('#nameRow').append(newTrain.name);
+	$('#destination').append('<div class="row" id="destRow">');
+	$('#destRow').append(newTrain.destination);
+	$('#frequency').append('<div class="row" id="freqRow">');
+	$('#freqRow').append(newTrain.frequency);
 
 	// Clears all of the text-boxes
 	$("#addName").val("");
 	$("#addDestination").val("");
-	$("#addTime").val("");
+	$("#addHours").val("");
+	$("#addMinutes").val("");
 	$("#addFreq").val("");
 
 	//Prevents moving to new page
@@ -64,10 +77,13 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 	// Store everything into a variable.
 	var trainName = childSnapshot.val().name;
 	var trainDest = childSnapshot.val().destination;
-	var trainTime = childSnapshot.val().time;
+	var trainHours = childSnapshot.val().hours;
+	var trainMinutes = childSnapshot.val().minutes;
 	var trainFreq = childSnapshot.val().frequency;
 
 	//Make sure the time is in the right format
+
+
 
 
 

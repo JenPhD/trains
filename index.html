@@ -13,6 +13,8 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+	<!-- sticky footer/not sure why this is messing up formatting of panel
+ 	<link href="assets/css/sticky-footer.css" type="text/css" rel="stylesheet"> -->
 	<!-- Site specific overrides -->
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
@@ -47,7 +49,7 @@
 		</div>
 	</div>
 
-	<!-- Make Your Bid -->
+	<!-- Add Train Panel -->
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
@@ -56,31 +58,41 @@
 				</div>
 				<div class="panel-body">
 					<form>
-						<div class="form-group">
-							<label for="trainName">Train Name</label>
-							<input type="text" class="form-control" id="addName">
-						</div>
-						<div class="form-group">
-							<label for="destination">Destination</label>
-							<input type="text" class="form-control" id="addDestination">
-						</div>	
-						<div class="form-group">
-						<label for=trTime>First Train Time (HH:mm-military time)</label>
-							<div class = "row">	
-								<div class="form-group col-xs-6">					
-									<label for="firstHour"></label>
-									<input type="number" class="form-control" id="addHours" placeholder="military hour" min="0" max="23">
-								</div>
-								<div class="form-group col-xs-6">
-									<label for="firstMinutes"></label>
-									<input type="number" class="form-control" id="addMinutes" placeholder="minutes" min="1" max="59">
+						<div class="row">
+							<div class="form-group col-xs-6">
+								<label for="trainName">Train Name</label>
+								<input type="text" class="form-control" id="addName">
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="freqMin">Frequency (min)</label>
-							<input type="number" min="1" max="24" class="form-control" id="addFreq">
+						<div class="row">
+							<div class="form-group col-xs-6">
+								<label for="destination">Destination</label>
+								<input type="text" class="form-control" id="addDestination">
+							</div>	
 						</div>
-						<button id="submitTrain" type="submit" class="btn btn-primary">Submit</button>
+						<div class="form-group">
+							<label for=trTime>First Train Time (HH:mm-military time)</label>
+							<div class = "row">	
+								<div class="form-group col-xs-2">					
+									<label for="firstHour"></label>
+									<input type="number" class="form-control" id="addHours" placeholder="military hour(0-23)" min="0" max="23">
+								</div>
+								<div class="form-group col-xs-2">
+									<label for="firstMinutes"></label>
+									<input type="number" class="form-control" id="addMinutes" placeholder="minutes(0-59)" min="1" max="59">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-xs-2">
+								<label for="freqMin">Frequency (min)</label>
+								<input type="number" min="1" max="1380" class="form-control" id="addFreq">
+							</div>
+							<div class="form-group col-xs-2">
+								<button id="submitTrain" type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+						
 					</form>
 
 				</div>
@@ -88,9 +100,9 @@
 		</div>	
 	</div>
 </div>
-<footer class="footer">
+	<footer class="footer">
       <small>&copy;Copyright Jennifer Pemberton 2016</small>
-</footer>
+	</footer>
 
 	
   <!-- jQuery 2.2.4 -->
