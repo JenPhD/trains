@@ -1,6 +1,41 @@
-.jumbotron {
-	background-color: blue;
+body {
+	background-color: #001;
+	background-image: url("../images/milky.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: white;
+	font-family: "Helvetica", "arial," sans-serif;	
+}
+
+.jumbotron {
+	background-color: rgba(26, 0, 26, .5);
+	color: white;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: bold;
+}
+
+.panel {
+	background-color: rgba(26, 0, 26, .5);
+}
+
+.panel-heading {
+	background-color: rgba(217, 102, 255, .6);
+	font-family: 'Orbitron', sans-serif;
+}
+
+.btn-primary {
+	border-color: rgb(217, 102, 255);
+	border-radius: 0;
+	background: #00ace6;
+	color: white;
+	font-family: 'Orbitron', sans-serif;
+	margin: 10px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: white;
+    background: rgb(217, 102, 255);
+    border-color: #00ace6; 
 }
 
 #submitTrain {
@@ -28,7 +63,7 @@
 }
 
 .footer {
-	background-color: blue;
+	background-color: rgba(26, 0, 26, .5);
 	color: white;
 	padding: 15px;
 	text-align: center;
